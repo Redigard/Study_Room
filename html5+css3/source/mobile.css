@@ -1,0 +1,157 @@
+/* reset code */
+*{ margin: 0px; padding: 0; }
+body{ max-width: 767px; font-family: sens-serif; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+img{ border: 0; }
+input{ display: none; }
+
+.ly_logo{ position: absolute; left: 15px; top: 15px; color: black; font-size: 25px; font-weight: bold; z-index: 1; }
+.ly_logo::first-letter{ color: red; }
+
+/* header of this Page */
+#ly_main{ position: relative; width: 100%; height: 600px; display: flex; flex-flow: row wrap; justify-content: center; align-content: center; }
+    #menu_icon{ position: fixed; top: 10px; right: 10px; z-index: 10000 }
+    #hd_info{ font-weight: bold; }  
+        #hd_logo_t{ font-size: 4rem; color: #464741; } 
+        #hd_logo_t::first-letter{ color: red; } 
+        #hd_logo_b{ text-align: right; color: #464741; font-size: 2.1rem; margin-top: -10px; }
+            
+        #hd_lnb{ position: fixed; top: 0px; right: -380px; z-index: 9999999999999; transition: 0.7s; }
+        #hd_lnbbox{ display: flex; justify-content: flex-start; align-items: flex-end; flex-flow: column nowrap; width: 380px; height: 970px; background-color: #F2AE6B; }
+            #lnb_menu{ display: flex; width: 380px; background-color: #C78F58; }
+            .menu_icon_off{ position: relative; margin-left: 200px; align-self: center; }
+            #hd_menuitem{ font-size: 2rem; padding: 25px 20px; }
+            
+            .hd_lnbitem{ text-align: left; margin-bottom: 10px; }
+            .lnb_part{ display: inline-block; color: #4C4B4F; padding: 8px 20px; width: 340px; font-size: 2rem; font-weight: bold; }
+            .lnb_part:active{ background-color: #fcbe74; }
+
+    #darkmode{ display: flex; justify-content: flex-start; align-items: center; margin-right: 280px; margin-top: 65px; }
+        #dk_bt{ display: flex; justify-content: center; align-items: center; width: 44px; height: 23px; border: 1px solid black; border-radius: 20px; z-index: 11; }
+        #dk_icon{ position: relative; top: 0.5px; left: 15px; }
+        #dk_gr{ position: relative; left: 25px; width: 21px; height: 21px; border-radius: 100%; z-index: 12; transition: 0.1s; }
+            .dk_comn{ width: 20px; height: 20px; }
+
+    #bw_white{ display: none; }
+    #bw_black{ display: none; }
+
+    #bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox > #darkmode > #dk_bt{ background-color: white; }
+    #bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_bt{ background-color: black; }
+
+    #bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_gr{ left: 23px; background-color: black; }
+    #bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_gr{ left: 43.5px; background-color: white; }
+
+    #bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_sun{ display: block; }
+    #bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_moon{ display: none; }
+    
+    #bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_moon{ display: block; }
+    #bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_sun{ display: none; }
+
+    #ly_main > #menu_icon > #menu_black_on{ display: none; }
+
+    #menu_icon_white_on:checked ~ #ly_main > #hd_lnb{ right: 0px; }
+    #menu_icon_black_on:checked ~ #ly_main > #hd_lnb{ right: 0px; }
+
+    #menu_icon_white_on:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_black_off{ display: none; }
+
+    #menu_icon_black_off:checked ~ #ly_menu > #menu_icon > #menu_white_on{ display: none; }
+    #menu_icon_black_off:checked ~ #ly_menu > #menu_icon > #menu_black_on{ display: block; }
+
+    #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_black_off{ display: block; }
+    #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_white_off{ display: none; }
+    #bw_black:checked ~ #ly_main > #menu_icon > #menu_white_on{ display: none; }
+    #bw_black:checked ~ #ly_main > #menu_icon > #menu_black_on{ display: block; }
+
+    #bw_black:checked ~ *{ background-color: black; color: white; }
+
+    #bw_black:checked ~ #ly_main > #hd_info > #hd_logo_t{ color: white; }
+    #bw_black:checked ~ #ly_main > #hd_info > #hd_logo_b{ color: white; }
+    #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox >#lnb_menu{ background-color: #081B3D; }
+    #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox{ background-color: #0C295E; }
+    #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > #hd_menuitem{ color: white; }
+    #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #hd_lnblist > .hd_lnbitem > .lnb_part{ color: #B0B0B0; }
+    #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #hd_lnblist > .hd_lnbitem > .lnb_part:active{ background-color: #0E306B; }
+
+    #bw_black:checked ~ #ly_skills > .ly_logo{ color: white; }
+
+    #bw_black:checked ~ #ly_portfolio > .ly_logo{ color: white; }
+
+    #bw_black:checked ~ #ly_contact > .ly_logo{ color: white; }
+
+    #bw_black:checked ~ #ly_footer{ background-color: white; }
+    #bw_black:checked ~ #ly_footer > #footer_contents > #copyright{ color: black; }
+
+    #bw_black ~ #ly_contact > #contact_contents{ display: flex; }
+    #bw_black ~ #ly_contact > #contact_contents_dark{ display: none; }
+    #bw_black:checked ~ #ly_contact > #contact_contents{ display: none; }
+    #bw_black:checked ~ #ly_contact > #contact_contents_dark{ display: flex; }
+
+    #bw_black ~ #ly_footer > #footer_contents > #github_dark{ display: none; }
+    #bw_black ~ #ly_footer > #footer_contents > #github{ display: flex; }
+    #bw_black:checked ~ #ly_footer > #footer_contents > #github_dark{ display: flex; }
+    #bw_black:checked ~ #ly_footer > #footer_contents > #github{ display: none; }
+
+    /* Skills of this Page */
+    #ly_skills{ position: relative; width: 100%; height: 585px; display: flex; justify-content: center; align-items: flex-start; background-color: white; }
+        #skill_list{ display: none; }
+        #skill_chart{ display: flex; flex-flow: row wrap; justify-content: center; align-items: center; margin-top: 85px; }
+            .nonchart_item{ display: none; }
+                .skill_htmlchart{ display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; width: 30%; } 
+                    .html5_profile{ display: none; }
+                    .img_html5{ width: 80px; height: 80px; transition: 0.4s; }
+                .skill_htmlchart:active > .html5_imgbox > .img_html5{ width: 100px; height: 100px; }
+                            .html_percentbox{ display: flex;  align-items: center; width: 80px; height: 10px; border: 1px solid black; border-radius: 10px; background-color: white; transition: 0.4s; }
+                                .html_percentbar{ width: 42.5px; height: 8px; background-color: red; margin-left: 1px; border-radius: 10px; animation: html 1s; transition: 0.4s; }
+                .skill_htmlchart:active >  .html5_percentbox > .html_percentbox{ width: 100px; height: 15px; }
+                .skill_htmlchart:active >  .html5_percentbox > .html_percentbox > .html_percentbar{ width: 55px; height: 13px; }  
+                                .html_percent{ display: none;}
+                                   
+                
+                    @keyframes html{ from{ width: 0px; }
+                                       to{ width: 42.5px; } }
+                    
+
+                .skill_csschart{ display: flex; flex-flow: column wrap; justify-content: center; align-content: center; width: 30%; margin-left: 90px; }
+                    .css3_profile{ display: none; }
+                    .img_css3{ width: 80px; height: 80px; transition: 0.4s; }
+                .skill_csschart:active > .css3_imgbox > .img_css3{ width: 100px; height: 100px; }
+                            .css_percentbox{ display: flex; align-items: center; width: 80px; height: 10px; border: 1px solid black; border-radius: 10px; background-color: white; transition: 0.4s; }
+                                .css_percentbar{ width: 40px; height: 8px; background-color: red; margin-left: 1px; border-radius: 10px; animation: css 1s; transition: 0.4s; }
+                .skill_csschart:active >  .css3_percentbox > .css_percentbox{ width: 100px; height: 15px; }
+                .skill_csschart:active >  .css3_percentbox > .css_percentbox > .css_percentbar{ width: 55px; height: 13px; }  
+                            .css_percent{ display: none; }
+                
+                    @keyframes css{ from{ width: 0px; }
+                                      to{ width: 40px; } }
+
+    .flag{ display: none; }
+
+    /* Portfolilo of this Page */
+    #ly_portfolio{ position: relative; width: 100%; height: 385px; overflow: hidden;  }
+        #pf_box{ position: absolute; top: 43%; width: 100%; display: flex; justify-content: center; }
+            .pf_yet{ font-size: 1.5rem; color: white; padding: 10px; border: 2px solid white;  }
+
+    /* Contact of this Page */
+    #ly_contact{ position: relative; display: flex; justify-content: center; align-items: center;  width: 100%; height: 485px; }
+        #contact_contents{ display: flex; flex-flow: row wrap; justify-content: center; align-content: center; width: 300px; }
+            .contact_comn{ display: flex; flex-flow: row wrap; justify-content: center; align-content: center; width: 100px; }
+            .contact_mn1{ margin-right: 70px; margin-bottom: 70px; }
+            .contact_mn2{ margin-bottom: 70px; }
+            .contact_mn3{ margin-right: 70px; }
+                .contact_item{ width: 100px; text-align: center; }
+                .contact_mailpart{ width: 170px; }
+    
+        #contact_contents_dark{ display: flex; flex-flow: row wrap; justify-content: center; align-content: center; width: 300px; }
+            .contact_comn_dark{ display: flex; flex-flow: row wrap; justify-content: center; align-content: center; width: 100px; }
+            .contact_mn1_dark{ margin-right: 70px; margin-bottom: 70px; }
+            .contact_mn2_dark{ margin-bottom: 70px; }
+            .contact_mn3_dark{ margin-right: 70px; }
+                .contact_item_dark{ width: 100px; text-align: center; }
+                .contact_mailpart_dark{ width: 170px; }
+                
+
+    /* Footer of this Page */
+    #ly_footer{ display: flex; justify-content: center; align-items: center; width: 100%; height: 200px; background-color: black; }
+        #footer_contents{ display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; }
+            #copyright{ color: white; margin-top: 20px; }

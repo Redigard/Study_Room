@@ -1,0 +1,191 @@
+        *{ margin: 0px; padding: 0; }
+        body{ width: 100%; font-family: sens-serif; }
+        li{ list-style: none; }
+        a{ text-decoration: none; }
+        img{ border: 0; }
+
+        .ly_logo{ position: absolute; left: 50px; top: 40px; color: black; font-size: 40px; font-weight: bold; z-index: 1; }
+        .ly_logo::first-letter{ color: red; }
+  
+        /* Header of This Page */
+        #ly_main{ position: relative; width: 100%; height: 970px; display: flex; justify-content: center; align-content: center; flex-flow: row wrap; }
+        #menu_icon{ position: fixed; top: 15px; right: 15px; z-index: 999; }
+
+        #menu_icon_white_on{ display: none; }
+        #menu_icon_white_off{ display: none; }
+        #menu_icon_black_on{ display: none; }
+        #menu_icon_black_off{ display: none; }
+
+        #ly_main > #menu_icon > #menu_black_on{ display: none; }
+
+        #menu_icon_white_on:checked ~ #ly_main > #hd_lnb{ right: 0px; }
+        #menu_icon_black_on:checked ~ #ly_main > #hd_lnb{ right: 0px; }
+
+        #menu_icon_white_on:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_black_off{ display: none; }
+
+        #menu_icon_black_off:checked ~ #ly_menu > #menu_icon > #menu_white_on{ display: none; }
+        #menu_icon_black_off:checked ~ #ly_menu > #menu_icon > #menu_black_on{ display: block; }
+
+
+        #hd_logo_t{ color: #464741; font-size: 11rem; font-weight: bold; padding-left: 30px; }
+        #hd_logo_t::first-letter{ color: red; }
+        #hd_logo_b{ color: #464741; font-size: 4.5rem; font-weight: bold; padding-left: 30px; text-align: right; margin-top: -34px; }
+        #hd_lnb{ position: fixed; top: 0px; right: -310px; z-index: 9999999999999; transition: 0.7s; }
+            #hd_lnbbox{ display: flex; justify-content: flex-start; align-items: flex-end; flex-flow: column nowrap; width: 310px; height: 970px; background-color: #F2AE6B; }
+                #lnb_menu{ display: flex; width: 310px; background-color: #C78F58; }
+                .menu_icon_off{ position: relative; margin-left: 130px; align-self: center; }
+                #hd_menuitem{ font-size: 2rem; padding: 25px 20px; }
+                
+                .hd_lnbitem{ text-align: left; margin-bottom: 10px; }
+                .lnb_part{ display: inline-block; color: #4C4B4F; padding: 8px 20px; width: 270px; font-size: 2rem; font-weight: bold; }
+                .lnb_part:hover{ background-color: #fcbe74; }
+
+        #darkmode{ display: flex; justify-content: center; align-items: center; margin-right: 206px; margin-top: 65px; }
+            #dk_bt{ display: flex; justify-content: center; align-items: center; width: 44px; height: 23px; border: 1px solid black; border-radius: 20px; z-index: 11; }
+            #dk_icon{ position: relative; top: 0.5px; left: 15px; }
+            #dk_gr{ position: relative; left: 25px; width: 21px; height: 21px; border-radius: 100%; z-index: 12; transition: 0.1s; }
+                .dk_comn{ width: 20px; height: 20px; }
+
+        #bw_white{ display: none; }
+        #bw_black{ display: none; }
+
+        #bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox > #darkmode > #dk_bt{ background-color: white; }
+        #bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_bt{ background-color: black; }
+
+        #bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_gr{ left: 23px; background-color: black; }
+        #bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_gr{ left: 43.5px; background-color: white; }
+
+        #bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_sun{ display: block; }
+        #bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_moon{ display: none; }
+        
+        #bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_moon{ display: block; }
+        #bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_sun{ display: none; }
+
+        #bw_black:checked ~ #ly_contact{ background-color: black; }
+
+        #bw_black ~ #ly_contact > #contact_contents_dark{ display: none; }
+        #bw_black ~ #ly_contact > #contact_contents{ display: flex; }
+        #bw_black:checked ~ #ly_contact > #contact_contents_dark{ display: flex; }
+        #bw_black:checked ~ #ly_contact > #contact_contents{ display: none; }
+
+        #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_black_off{ display: block; }
+        #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_white_off{ display: none; }
+        #bw_black:checked ~ #ly_main > #menu_icon > #menu_white_on{ display: none; }
+        #bw_black:checked ~ #ly_main > #menu_icon > #menu_black_on{ display: block; }
+
+        #bw_black:checked ~ *{ background-color: black; color: white; }
+
+        #bw_black:checked ~ #ly_main > #hd_info > #hd_logo_t{ color: white; }
+        #bw_black:checked ~ #ly_main > #hd_info > #hd_logo_b{ color: white; }
+        #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox >#lnb_menu{ background-color: #081B3D; }
+        #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox{ background-color: #0C295E; }
+        #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > #hd_menuitem{ color: white; }
+        #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #hd_lnblist > .hd_lnbitem > .lnb_part{ color: #B0B0B0; }
+        #bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #hd_lnblist > .hd_lnbitem > .lnb_part:hover{ background-color: #0E306B; }
+    
+        #bw_black:checked ~ #ly_skills > .ly_logo{ color: white; }
+        #bw_black:checked ~ #ly_skills > #skill_list{ background-color: white; }
+        #bw_black:checked ~ #ly_skills > #skill_list > .skill_listname{ background-color: white; }
+        #bw_black:checked ~ #ly_skills > #skill_list > .skill_listname > .skill_list_subname{ color: black; }
+        #bw_black:checked ~ #ly_skills > #skill_chart > .skill_htmlchart{ background-color: white; }
+        #bw_black:checked ~ #ly_skills > #skill_chart > .skill_csschart{ background-color: white; }
+        #bw_black:checked ~ #ly_skills > #skill_chart > .skill_htmlchart > .html5_profile{ color: black; }
+        #bw_black:checked ~ #ly_skills > #skill_chart > .skill_htmlchart > .html5_percentbox > .html_percent{ color: black; }
+        #bw_black:checked ~ #ly_skills > #skill_chart > .skill_csschart > .css3_profile{ color: black; }
+        #bw_black:checked ~ #ly_skills > #skill_chart > .skill_csschart > .css3_percentbox > .css_percent{ color: black; }
+    
+        #bw_black:checked ~ #ly_portfolio > .ly_logo{ color: white; }
+    
+        #bw_black:checked ~ #ly_contact > .ly_logo{ color: white; }
+    
+        #bw_black:checked ~ #ly_footer{ background-color: white; }
+        #bw_black:checked ~ #ly_footer > #footer_contents > #copyright{ color: black; }
+        #bw_black:checked ~ #ly_footer > #footer_contents > #github_dark{ display: block; }
+        #bw_black:checked ~ #ly_footer > #footer_contents > #github{ display: none; }
+        #bw_black ~ #ly_footer > #footer_contents > #github{ display: block; }
+        #bw_black ~ #ly_footer > #footer_contents > #github_dark{ display: none; }
+ 
+        /* Skills of This Page */
+        #ly_skills{ position: relative; height: 970px; display: flex; justify-content: center; align-items: center; background-color: white; }
+            #skill_list{ width: 150px; height: 700px; border: 1px solid black; border-radius: 10px; }
+            .skill_listname{ display: block; padding: 5px 0px; border-bottom: 1px solid black; width: 150px; text-align: center; border-radius: 7.5px 7.5px 0px 0px; font-weight: bold; background-color: black; color: white; }
+            .skill_listname:hover{ box-shadow: 0px 2px 5px black;}
+            .skill_listname:active{ box-shadow: none; }
+            .skill_listitems{ display: flex; flex-flow: row wrap; align-content: flex-start; justify-content: center; }
+                .skill_item{ display: block;  margin: 3px; padding: 5px;  }
+                .skill_item:hover{ border: 1px solid black; border-radius: 5px; box-shadow: 2px 2px 5px black; }
+                .skill_item:active{ border: 1px solid black; border-radius: 5px; box-shadow: none; }
+                .skill_html{ margin-top: 15px; }
+                .skill_css{ margin-top: 15px; }
+
+            #skill_chart{ margin-left: 15px; }
+                .skill_nonchart{ display: flex; align-items: center; justify-content: center; height: 700px; width: 1300px; border: 1px solid black; border-radius: 10px; background-color: gray; color: white; font-size: 2rem; font-weight: bold; }
+                    .nonchart_item{ position: relative; display: flex; align-items: center; justify-content: center; }
+                        .nonchart_icon{ margin-bottom: 6px; margin-right: 9px; display: none; }
+                .skill_nonchart:hover > .nonchart_item{ animation: nonchart 0.8s infinite alternate; }
+                .skill_nonchart:hover > .nonchart_item > .nonchart_icon{ display: block; }
+                .skill_htmlchart{ display: flex; height: 700px; width: 1300px; border: 1px solid black; border-radius: 10px; }
+                    .html5_profile{ margin: 10px 0px 0px 20px; font-size: 2.5rem; }
+                    .html5_imgbox{ display: flex; justify-content: center; align-items: center; height: 700px; }
+                        .img_html5{  width: 350px; height: 350px; }
+                    
+                    .html5_percentbox{ display: flex; flex-flow: row wrap; align-content: center; justify-content: flex-start; padding-left: 40px; width: 700px; height: 700px; }
+                        .html_percentbox{ display: flex; align-items: center; width: 600px; height: 14px; border: 1px solid black; border-radius: 10px; background-color: lightgray; }
+                        .html_percentbar{ margin-left: 3px; height: 10px; width: 296.5px; background-color: red; border-radius: 10px; animation: html5 2s; }
+                        .html_percent{ width: 615.5px; }
+                
+                .skill_csschart{ display: flex; height: 700px; width: 1300px; border: 1px solid black; border-radius: 10px; }
+                    .css3_profile{ margin: 10px 37px 0px 20px; font-size: 2.5rem; }
+                    .css3_imgbox{ display: flex; justify-content: center; align-items: center; height: 700px; }
+                        .img_css3{  width: 350px; height: 350px; }
+                    
+                    .css3_percentbox{ display: flex; flex-flow: row wrap; align-content: center; justify-content: flex-start; padding-left: 40px; width: 700px; height: 700px; }
+                    .css_percentbox{ display: flex; align-items: center; width: 600px; height: 14px; border: 1px solid black; border-radius: 10px; background-color: lightgray; }
+                        .css_percentbar{ margin-left: 3px; height: 10px; width: 296.5px; background-color: red; border-radius: 10px; animation: css3 2s; }
+                        .css_percent{ width: 615.5px; }
+        
+            #nonbt{ display: none; }
+            #html5bt{ display: none; }
+            #css3bt{ display: none; }
+
+            #nonbt ~ #ly_skills > #skill_chart > .skill_nonchart{ display: none; }
+            #nonbt:checked ~ #ly_skills > #skill_chart > .skill_nonchart{ display: flex; }
+
+            #html5bt ~ #ly_skills > #skill_chart > .skill_htmlchart{ display: none;}
+            #html5bt:checked ~ #ly_skills > #skill_chart > .skill_htmlchart{ display: flex; }
+
+            #css3bt ~ #ly_skills > #skill_chart > .skill_csschart{ display: none;}
+            #css3bt:checked ~ #ly_skills > #skill_chart > .skill_csschart{ display: flex; }
+
+
+            @keyframes nonchart{ from{ right: 0px; }
+                                 to{ right: 75px; } }
+
+            @keyframes html5{ from{ width: 0px; } 
+                              to{ width: 296.5px; } }
+
+            @keyframes css3{ from{ width: 0px; } 
+                              to{ width: 296.5px; } }
+      
+
+            .flag{ display: flex; width: 618px; justify-content: flex-end; padding-bottom: 1px; }
+            .per{ margin-left: 255.5px; }
+
+        #ly_portfolio{ position: relative; height: 970px; overflow: hidden;  }
+            #pf_box{ position: absolute; width: 100%; top: 42%; display: flex; justify-content: center; }
+                .pf_yet{ font-size: 3rem; font-weight: bold; color: white; border: 4px solid white;  padding: 30px 20px; } 
+
+        #ly_contact{ position: relative; width: 100%; height: 485px; display: flex; justify-content: center; align-items: center; }
+            #contact_contents{ display: flex; flex-flow: column nowrap; justify-content: center; align-items: flex-start; }
+                .contact_comn{ display: flex; justify-content: center; align-items: center; margin-top: 10px; }
+                    .contact_item{ margin-left: 5px; }
+                        .contact_text{ font-size: 1.5rem; }
+            
+        #contact_contents_dark{ display: flex; flex-flow: column nowrap; justify-content: center; align-items: flex-start; }
+                .contact_comn_dark{ display: flex; justify-content: center; align-items: center; margin-top: 10px; }
+                    .contact_item_dark{ margin-left: 5px; }
+                        .contact_text_dark{ font-size: 1.5rem; color: white; }
+
+        #ly_footer{ width: 100%; height: 200px; background-color: black; display: flex; justify-content: center; align-items: center; }
+            #footer_contents{ display: flex; flex-flow: column nowrap; align-items: center; }
+                #copyright{ margin-top: 15px; color: white; font-size: 14px; }

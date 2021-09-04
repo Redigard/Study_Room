@@ -1,0 +1,151 @@
+*{ margin: 0px; padding: 0; }
+body{ max-width: 959px; font-family: sens-serif; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+img{ border: 0; }
+input{ display: none; }
+
+.ly_logo{ position: absolute; left: 15px; top: 15px; color: black; font-size: 25px; font-weight: bold; z-index: 1; }
+.ly_logo::first-letter{ color: red; }
+
+
+/* Header of this Page */
+#ly_main{ position: relative; width: 100%; height: 500px; display: flex; justify-content: center; align-items: center; }
+    #menu_icon{ position: fixed; top: 10px; right: 10px; z-index: 2; }
+    #hd_info{ font-weight: bold; }
+        #hd_logo_t{ font-size: 6rem; color: #464741; }
+        #hd_logo_t::first-letter{ color: red; }
+        #hd_logo_b{ font-size: 2.7rem; text-align: right; margin-top: -17px; color: #464741; }
+
+    #hd_lnb{ position: fixed; top: 0px; right: -380px; z-index: 9999999999999; transition: 0.7s; }
+    #hd_lnbbox{ display: flex; justify-content: flex-start; align-items: flex-end; flex-flow: column nowrap; width: 380px; height: 970px; background-color: #F2AE6B; }
+        #lnb_menu{ display: flex; width: 380px; background-color: #C78F58; }
+        .menu_icon_off{ position: relative; margin-left: 200px; align-self: center; }
+        #hd_menuitem{ font-size: 2rem; padding: 25px 20px; }
+        
+        .hd_lnbitem{ text-align: left; margin-bottom: 10px; }
+        .lnb_part{ display: inline-block; color: #4C4B4F; padding: 8px 20px; width: 340px; font-size: 2rem; font-weight: bold; }
+        .lnb_part:active{ background-color: #fcbe74; }
+
+#darkmode{ display: flex; justify-content: flex-start; align-items: center; margin-right: 280px; margin-top: 65px; }
+    #dk_bt{ display: flex; justify-content: center; align-items: center; width: 44px; height: 23px; border: 1px solid black; border-radius: 20px; z-index: 11; }
+    #dk_icon{ position: relative; top: 0.5px; left: 15px; }
+    #dk_gr{ position: relative; left: 25px; width: 21px; height: 21px; border-radius: 100%; z-index: 12; transition: 0.1s; }
+        .dk_comn{ width: 20px; height: 20px; }
+
+#bw_white{ display: none; }
+#bw_black{ display: none; }
+
+#bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox > #darkmode > #dk_bt{ background-color: white; }
+#bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_bt{ background-color: black; }
+
+#bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_gr{ left: 23px; background-color: black; }
+#bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_gr{ left: 43.5px; background-color: white; }
+
+#bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_sun{ display: block; }
+#bw_white:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_moon{ display: none; }
+
+#bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_moon{ display: block; }
+#bw_black:checked ~ #ly_main >  #hd_lnb > #hd_lnbbox >   #darkmode > #dk_icon > #dk_sun{ display: none; }
+
+#ly_main > #menu_icon > #menu_black_on{ display: none; }
+
+#menu_icon_white_on:checked ~ #ly_main > #hd_lnb{ right: 0px; }
+#menu_icon_black_on:checked ~ #ly_main > #hd_lnb{ right: 0px; }
+
+#menu_icon_white_on:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_black_off{ display: none; }
+
+#menu_icon_black_off:checked ~ #ly_menu > #menu_icon > #menu_white_on{ display: none; }
+#menu_icon_black_off:checked ~ #ly_menu > #menu_icon > #menu_black_on{ display: block; }
+
+#bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_black_off{ display: block; }
+#bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > .menu_white_off{ display: none; }
+#bw_black:checked ~ #ly_main > #menu_icon > #menu_white_on{ display: none; }
+#bw_black:checked ~ #ly_main > #menu_icon > #menu_black_on{ display: block; }
+
+#bw_black ~ #ly_contact > #contact_contents{ display: flex; }
+#bw_black ~ #ly_contact > #contact_contents_dark{ display: none; }
+#bw_black:checked ~ #ly_contact > #contact_contents{ display: none; }
+#bw_black:checked ~ #ly_contact > #contact_contents_dark{ display: flex; }
+
+#bw_black ~ #ly_footer > #footer_contents > #github{ display: block; }
+#bw_black ~ #ly_footer > #footer_contents > #github_dark{ display: none; }
+#bw_black:checked ~ #ly_footer > #footer_contents > #github{ display: none; }
+#bw_black:checked ~ #ly_footer > #footer_contents > #github_dark{ display: block; }
+
+#bw_black:checked ~ *{ background-color: black; color: white; }
+
+#bw_black:checked ~ #ly_main > #hd_info > #hd_logo_t{ color: white; }
+#bw_black:checked ~ #ly_main > #hd_info > #hd_logo_b{ color: white; }
+#bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox >#lnb_menu{ background-color: #081B3D; }
+#bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox{ background-color: #0C295E; }
+#bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #lnb_menu > #hd_menuitem{ color: white; }
+#bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #hd_lnblist > .hd_lnbitem > .lnb_part{ color: #B0B0B0; }
+#bw_black:checked ~ #ly_main > #hd_lnb > #hd_lnbbox > #hd_lnblist > .hd_lnbitem > .lnb_part:active{ background-color: #0E306B; }
+
+#bw_black:checked ~ #ly_skills > .ly_logo{ color: white; }
+
+#bw_black:checked ~ #ly_portfolio > .ly_logo{ color: white; }
+
+#bw_black:checked ~ #ly_contact > .ly_logo{ color: white; }
+
+#bw_black:checked ~ #ly_footer{ background-color: white; }
+#bw_black:checked ~ #ly_footer > #footer_contents > #copyright{ color: black; }
+
+/* Skills of this Page */
+#ly_skills{ position: relative; width: 100%; height: 550px; display: flex; justify-content: center; align-items: flex-start; }
+    #skill_list{ display: none; }
+    #skill_chart{ display: flex; flex-flow: row wrap; justify-content: center; align-items: center; margin-top: 73px; }
+        .nonchart_item{ display: none; }
+            .skill_htmlchart{ display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; width: 30%; } 
+                .html5_profile{ display: none; }
+                .img_html5{ width: 100px; height: 100px; }
+                    .html5_percentbox{ display: flex; width: 132px; flex-flow: row wrap; align-content: center; }
+                        .html_percentbox{ display: flex;  align-items: center; width: 120px; height: 12px; border: 1px solid black; border-radius: 10px; background-color: white; margin-top: 6px; }
+                            .html_percentbar{ width: 62.5px; height: 10px; background-color: red; margin-left: 1px; border-radius: 10px; animation: html 1s; } 
+                            .html_percent{ font-size: 11px; width: 132px; }
+                                .per{ margin-left: 29.6px; }
+                          
+                @keyframes html{ from{ width: 0px; }
+                                   to{ width: 62.5px; } }
+            
+
+
+            .skill_csschart{ margin-left: 115px; display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; width: 30%; } 
+                .css3_profile{ display: none; }
+                .img_css3{ width: 100px; height: 100px; }
+                    .css3_percentbox{ display: flex; width: 132px; flex-flow: row wrap; align-content: center; }
+                        .css_percentbox{ display: flex;  align-items: center; width: 120px; height: 12px; border: 1px solid black; border-radius: 10px; background-color: white; margin-top: 6px; }
+                            .css_percentbar{ width: 62.5px; height: 10px; background-color: red; margin-left: 1px; border-radius: 10px; animation: css 1s; } 
+                            .css_percent{ font-size: 11px; width: 132px; }
+                                .per{ margin-left: 29.6px; }
+        
+                @keyframes css{ from{ width: 0px; }
+                                  to{ width: 62.5px; } }
+
+.flag{ display: none; }
+
+
+/* Portfolio of this Page */
+#ly_portfolio{ position: relative; width: 100%; height: 400px; overflow: hidden; }
+    #pf_box{ position: absolute; width: 100%; top: 42%; display: flex; justify-content: center; align-items: center; }
+        .pf_yet{ font-size: 1.8rem; font-weight: bold; color: white; padding: 15px 25px; border: 3px solid white; }
+
+
+/* Contact of this Page */
+#ly_contact{ position: relative; width: 100%; height: 485px; display: flex; justify-content: center; align-items: center; }
+    #contact_contents{ display: flex; flex-flow: column nowrap; justify-content: center; align-items: flex-start; }
+        .contact_comn{ display: flex; justify-content: center; align-items: center; margin-top: 10px; }
+            .contact_item{ margin-left: 5px; }
+                .contact_text{ font-size: 1.2rem; }
+
+    #contact_contents_dark{ display: flex; flex-flow: column nowrap; justify-content: center; align-items: flex-start; }
+        .contact_comn_dark{ display: flex; justify-content: center; align-items: center; margin-top: 10px; }
+            .contact_item_dark{ margin-left: 5px; }
+                .contact_text_dark{ font-size: 1.2rem; color: white; }
+
+
+/* Footer of this Page */
+#ly_footer{ width: 100%; height: 200px; display: flex; justify-content: center; align-content: center;  background-color: black; }
+    #footer_contents{ display: flex; width: 300px; flex-flow: row wrap; justify-content: center; align-content: center; }
+        #copyright{ color: white; margin-top: 15px; }

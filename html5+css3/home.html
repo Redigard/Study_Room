@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @import url(source/mobile.css) screen and (max-width: 767px);
+        @import url(source/tablets.css) screen and (min-width: 768px) and (max-width: 959px);
+        @import url(source/desktop.css) screen and (min-width: 960px);
+
+        .html5{ background: url(source/skill_icon.png) -155.5px -98px; width: 50px; height: 55px; }
+        .css3{  background: url(source/skill_icon.png) -304px -98px; width: 50px; height: 55px;  }
+    </style>
+</head>
+<body>
+    <input id="bw_white" type="radio" name="bwmod" checked="checked" />
+    <input id="bw_black" type="radio" name="bwmod" />
+    <input id="menu_icon_white_on" type="radio" name="white" />
+    <input id="menu_icon_white_off" type="radio" name="white" />
+    <input id="menu_icon_black_on" type="radio" name="white" />
+    <input id="menu_icon_black_off" type="radio" name="white" />
+    <input id="nonbt" type="radio" name="skill_mn" checked="checked" />
+    <input id="html5bt" type="radio" name="skill_mn" />
+    <input id="css3bt" type="radio" name="skill_mn" />
+
+    <header id="ly_main">
+        <div id="menu_icon">
+            <label for="menu_icon_black_on" id="menu_black_on"><img id="menu_white" src="https://img.icons8.com/ios/50/ffffff/menu-squared-2.png"/></label>
+            <label for="menu_icon_white_on" id="menu_white_on" ><img id="menu_black" src="https://img.icons8.com/ios/50/000000/menu-squared-2--v1.png"/></label>
+        </div>
+        <div id="hd_info">
+            <p id="hd_logo_t">Portfolio</p>
+            <p id="hd_logo_b">of KGI</p>
+        </div>
+        <nav id="hd_lnb">
+            <div id="hd_lnbbox">
+                <div id="lnb_menu">
+                    <h1 id="hd_menuitem">MENU</h1>
+                    <label for="menu_icon_white_off" class="menu_icon_off menu_white_off" ><img src="https://img.icons8.com/ios-glyphs/30/000000/chevron-right.png"/></label>
+                    <label for="menu_icon_black_off" class="menu_icon_off menu_black_off" ><img src="https://img.icons8.com/ios-glyphs/30/ffffff/chevron-right.png"/></label>
+                </div>
+                <ul id="hd_lnblist">
+                    <li class="hd_lnbitem lnbitem_1"><a class="lnb_part hdlnb_about" href="#">Home</a></li>
+                    <li class="hd_lnbitem lnbitem_2"><a class="lnb_part hdlnb_services" href="#pt_services">Skills</a></li>
+                    <li class="hd_lnbitem lnbitem_3"><a class="lnb_part hdlnb_portfolio" href="#pt_portfolio">Portfolio</a></li>
+                    <li class="hd_lnbitem lnbitem_4"><a class="lnb_part hdlnb_contact" href="#pt_contact">Contact</a></li>
+                </ul>
+                <div id="darkmode">
+                    <div id="dk_icon">
+                        <img id="dk_sun" src="https://img.icons8.com/ios-glyphs/30/000000/sun.png"/>
+                        <img id="dk_moon" src="https://img.icons8.com/ios-glyphs/30/ffffff/moon-symbol.png"/>
+                    </div>
+                    <div id="dk_gr"></div>
+                    <div id="dk_bt">
+                        <label for="bw_white" class="dk_comn dk_off"></label>
+                        <label for="bw_black" class="dk_comn dk_on"></label>
+                    </div>
+                </div>
+            </div>
+        </nav> 
+    </header>
+
+    <div id="pt_services"></div>
+    <section id="ly_skills">
+        <a class="ly_logo" href="#">Skills</a>
+        <aside id="skill_list">
+            <label for="nonbt" class="skill_listname"><p class="skill_list_subname">SKILL LIST</p></label>
+            <div class="skill_listitems">
+                <label for="html5bt" class="skill_item skill_html"><div class="html5"></div></label>
+                <label for="css3bt" class="skill_item skill_css"><div class="css3"></div></label> 
+            </div>
+        </aside>
+        <article id="skill_chart">
+            <div class="skill_nonchart">
+                <div class="nonchart_item">
+                    <img class="nonchart_icon" src="https://img.icons8.com/ios-filled/50/ffffff/hand-left.png"/>
+                    <p class="nonchart_text">'SKILL LIST' 탭의 아이콘을 클릭해주세요!</p>
+                </div>
+            </div>
+            <div class="skill_htmlchart">
+                <p class="html5_profile">HTML 5</p>
+                <div class="html5_imgbox">
+                    <img class="img_html5" src="source/logo_html5.png" />
+                </div>
+                <div class="html5_percentbox">
+                    <div class="flag"><img src="https://img.icons8.com/color/30/000000/filled-flag.png"/></div>
+                    <div class="html_percentbox">
+                        <div class="html_percentbar"></div>
+                    </div>
+                    <span class="html_percent">
+                        <span class="0%">0%</span>
+                        <span class="per 50%">50%</span>
+                        <span class="per 100%">100%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill_csschart">
+                <p class="css3_profile">CSS 3</p>
+                <div class="css3_imgbox">
+                    <img class="img_css3" src="source/logo_css3.png" />
+                </div>
+                <div class="css3_percentbox">
+                    <div class="flag"><img src="https://img.icons8.com/color/30/000000/filled-flag.png"/></div>
+                    <div class="css_percentbox">
+                        <div class="css_percentbar"></div>
+                    </div>
+                    <span class="css_percent">
+                        <span class="0%">0%</span>
+                        <span class="per 50%">50%</span>
+                        <span class="per 100%">100%</span>
+                    </span>
+                </div>
+            </div>
+        </article>
+    </section>
+    <div id="pt_portfolio"></div>
+    <article id="ly_portfolio">
+        <video muted autoplay loop class="standby_img">
+            <source src="source/tv_noise.mp4" />
+        </video>
+        <a class="ly_logo" href="#">PortFolio</a>
+        <div id="pf_box">
+            <p class="pf_yet">추후에 공개예정입니다.</p>
+        </div>
+    </article>
+    <div id="pt_contact"></div>
+    <article id="ly_contact">
+        <a class="ly_logo" href="#">Contact</a>
+        <div id="contact_contents">
+            <div class="contact_comn contact_mn1">
+                <img class="contact_icon contact_nameicon" src="https://img.icons8.com/ios/50/000000/name--v1.png"/>
+                <div class="contact_item contact_namepart"><p class="contact_text contact_name">이름</p></div>
+            </div>
+            <div class="contact_comn contact_mn2">
+                <img class="contact_icon contact_phoneicon" src="https://img.icons8.com/ios/50/000000/apple-phone.png"/>
+                <span class="contact_item contact_numberpart"><p class="contact_text contact_number">전화번호</p></span>
+            </div>
+            <div class="contact_comn contact_mn3">
+                <img class="contact_icon contact_dateicon" src="https://img.icons8.com/ios/50/000000/tear-off-calendar--v1.png"/>
+                <span class="contact_item contact_datepart"><p class="contact_text contact_date">달력</p></span>
+            </div>
+            <div class="contact_comn contact_mn4">
+                <img class="contact_icon contact_mailicon" src="https://img.icons8.com/ios/50/000000/mail.png"/>
+                <span class="contact_item contact_mailpart"><p class="contact_text contact_mail">krayon103@gmail.com</p></span>
+            </div>
+        </div>
+
+        <div id="contact_contents_dark">
+            <div class="contact_comn_dark contact_mn1_dark">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/name.png"/>
+                <div class="contact_item_dark contact_namepart_dark"><p class="contact_text_dark contact_name_dark">이름</p></div>
+            </div>
+            <div class="contact_comn_dark contact_mn2_dark">
+                <img class="contact_icon contact_phoneicon" src="https://img.icons8.com/ios-filled/50/ffffff/apple-phone.png"/>
+                <span class="contact_item_dark contact_numberpart_dark"><p class="contact_text_dark contact_number_dark">전화번호</p></span>
+            </div>
+            <div class="contact_comn_dark contact_mn3_dark">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/tear-off-calendar.png"/>
+                <span class="contact_item_dark contact_datepart_dark"><p class="contact_text_dark contact_date_dark">달력</p></span>
+            </div>
+            <div class="contact_comn_dark contact_mn4_dark">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/mail.png"/>
+                <span class="contact_item_dark contact_mailpart_dark"><p class="contact_text_dark contact_mail_dark">krayon103@gmail.com</p></span>
+            </div>
+        </div>
+    </article>
+    <footer id="ly_footer">
+        <div id="footer_contents">
+            <a href="https://github.com/redigard" id="github"><img src="https://img.icons8.com/ios-filled/100/ffffff/github.png"/></a>
+            <a href="https://github.com/redigard" id="github_dark"><img src="https://img.icons8.com/ios-filled/100/000000/github.png"/></a>
+            <p id="copyright">Copyright 2021.KGI. All rights reserved.</p>
+        </div>       
+    </footer>
+</body>
+</html>
